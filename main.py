@@ -58,7 +58,7 @@ def download_images(query, num_images):
 
 
 # 검색어와 저장할 이미지 개수 지정
-query = 'paper'
+query = 'paaper'
 num_images = 10
 
 download_images(query, num_images)
