@@ -7,8 +7,8 @@ from bs4 import BeautifulSoup
 """
 
 # 우선 원하는 제품의 URL을 가져와서 HTML 코드를 가져오기 ['아이폰 12 128GB']
-wemakeprice_url = 'https://front.wemakeprice.com/product/919580943'
-tmon_url = 'http://www.tmon.co.kr/deal/3515122936'
+wemakeprice_url = 'https://front.wemakeprice.com/product/628114781'
+tmon_url = 'http://www.tmon.co.kr/deal/18200037958'
 
 wemakeprice_response = requests.get(wemakeprice_url)
 tmon_response = requests.get(tmon_url)
