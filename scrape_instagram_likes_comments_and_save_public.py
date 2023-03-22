@@ -1,26 +1,15 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 import time
 
 def scrape_instagram_likes_comments_public(profile_url):
     # Extract the account name from the profile URL
     account_name = profile_url.split('/')[-2]
 
-    # Initialize the Chrome WebDriver with options
-    chrome_options = webdriver.ChromeOptions()
+    # Initialize the Chrome WebDriver
+    chrome_options = Options()
     chrome_options.add_argument('--disable-blink-features=AutomationControlled')
-    chrome_options.add_argument('--disable-extensions')
-    chrome_options.add_argument('--profile-directory=Default')
-    chrome_options.add_argument('--incognito')
-    chrome_options.add_argument('--disable-plugins-discovery')
-    chrome_options.add_argument('--start-maximized')
-    chrome_options.add_argument('--disable-notifications')
-    chrome_options.add_argument('--ignore-certificate-errors')
-    chrome_options.add_argument('--disable-popup-blocking')
-    chrome_options.add_argument('--disable-default-apps')
-    chrome_options.add_argument('--disable-infobars')
-    chrome_options.add_argument('--remote-debugging-port=9222')
-    chrome_options.add_argument('--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3')
     driver = webdriver.Chrome(options=chrome_options)
 
     # Navigate to the Instagram profile page
@@ -65,6 +54,7 @@ def scrape_instagram_likes_comments_public(profile_url):
 
     # Return the results
     return results
+
 
 
 scrape_instagram_likes_comments_public('https://www.instagram.com/climb__jh/')
